@@ -4,6 +4,7 @@ let ties = 0;
 let turn = 'X';
 
 
+
 function checkForWin(val) {
   if ($('.row-1 .box.' + val).length === 3
   || $('.row-2 .box.' + val ).length === 3
@@ -28,9 +29,9 @@ function checkForWin(val) {
      )
 // I should not remove
  {
-  $('.box').empty();
-   $('.X').removeClass('X');
-  $('.O').removeClass('O')
+//  $('.box').empty();
+//   $('.X').removeClass('X');
+//  $('.O').removeClass('O')
 
    return true
 
@@ -41,9 +42,9 @@ function checkForWin(val) {
 
   function checkTie(){
     if ($('.X').length + $('.O').length === 9){
-     $('.box').empty();
-     $('.X').removeClass('X');
-     $('.O').removeClass('O')
+  //   $('.box').empty();
+  //   $('.X').removeClass('X');
+  //   $('.O').removeClass('O')
       ties++
       $('#ties').text(ties)
 
