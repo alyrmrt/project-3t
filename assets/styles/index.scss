@@ -1,3 +1,4 @@
+
 h1, h2, h4{
   text-align: center;
 
@@ -49,4 +50,17 @@ body {
 .inline {
   display: inline;
   justify-content: center;
+}
+
+.success {
+  background-color: #008000;
+
+}
+
+.failure {
+  background-color: #f00;
+}
+
+.hide {
+  display: none;
 }
