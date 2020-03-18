@@ -1,15 +1,18 @@
-let p_X_Score = 0;
-let p_O_Score = 0;
+// let p_X_Score = 0;
+// let p_O_Score = 0;
 let ties = 0;
 let turn = 'X';
 
 function checkForWin(val) {
+  // for the rows
   if ($('.row-1 .box.' + val).length === 3 ||
     $('.row-2 .box.' + val).length === 3 ||
     $('.row-3 .box.' + val).length === 3 ||
+    //for the cols
     $('.col-1.' + val).length === 3 ||
     $('.col-2' + val).length === 3 ||
     $('.col-3' + val).length === 3 ||
+    //
     ($('#1').hasClass(val) &&
       $('#5').hasClass(val) &&
       $('#9').hasClass(val)) ||
@@ -32,6 +35,7 @@ function checkForWin(val) {
   // I should not remove
 
   {
+    // make winning side
     $('.box').text(val);
 
     //   $('.X').removeClass('X');
@@ -79,7 +83,7 @@ function checkTie() {
 
 })
 
-
+// for the restart game button
   const restart = $('#start-game').click(function() {
   $('.box').empty();
   $('.X').removeClass('X');
