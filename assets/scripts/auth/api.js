@@ -51,20 +51,6 @@ module.exports = {
   signOut
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* const config = require('../config')
 const store = require('../store')
 
