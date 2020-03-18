@@ -32,7 +32,8 @@ function checkForWin(val) {
   // I should not remove
 
   {
-     $('.box').text(val);
+    $('.box').text(val);
+
     //   $('.X').removeClass('X');
     //  $('.O').removeClass('O')
 
@@ -49,46 +50,46 @@ function checkTie() {
     ties++
     $('#ties').text(ties)
 
+
   }
+
 }
 
-     $('.box').click(function() {
-    if (turn === 'X' && !$(this).text()) {
-      $(this).text('X')
-      $(this).addClass('X')
-      turn = 'O'
-      if (checkForWin('X')) {
-        p_X_Score++;
-        $('#X_Score').text(p_X_Score);
-      } else checkTie()
-    } else if (!$(this).text()) {
-      $(this).text('0')
-      $(this).addClass('O')
-      turn = 'X'
-      if (checkForWin('O')) {
-        p_O_Score++;
-        $('#O_Score').text(p_O_Score);
-      } else checkTie()
+  const klik = $('.box').click(function() {
+  if (turn === 'X' && !$(this).text()) {
+    $(this).text('X')
+    $(this).addClass('X')
+    turn = 'O'
+    if (checkForWin('X')) {
+      p_X_Score++;
+      $('#X_Score').text(p_X_Score);
+    } else checkTie()
+  } else if (!$(this).text()) {
+    $(this).text('0')
+    $(this).addClass('O')
+    turn = 'X'
+    if (checkForWin('O')) {
+      p_O_Score++;
+      $('#O_Score').text(p_O_Score);
+    } else checkTie()
 
-    }
+  }
 
-    $('#turn').text(turn)
+  $('#turn').text(turn)
 
-  })
-
-
-    $('#start-game').click(function(){
-      $('.box').empty();
-      $('.X').removeClass('X');
-      $('.O').removeClass('O')
-
-    })
+})
 
 
+  const restart = $('#start-game').click(function() {
+  $('.box').empty();
+  $('.X').removeClass('X');
+  $('.O').removeClass('O')
+  $('board').removeClass('hide')
+  turn = 'X'
 
+})
 
-
-
-module.exports = {
-
+module.export = {
+  klik,
+  restart
 }

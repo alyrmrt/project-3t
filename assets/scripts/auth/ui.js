@@ -1,6 +1,5 @@
 const store = require('../store')
 require('../engine.js')
-
 const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
   $('#message').removeClass()
@@ -18,6 +17,7 @@ const signInSuccess = function (data) {
   $('#message').text('Signed in successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#start-game').removeClass('hide')
   console.log('signInSuccess data is: ', data)
   store.user = data.user
 }
