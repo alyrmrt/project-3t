@@ -18,6 +18,11 @@ const signInSuccess = function (data) {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#start-game').removeClass('hide')
+  $('#sign-up').addClass('hide')
+  $('#sign-in').addClass('hide')
+  $('#change-password').removeClass('hide')
+  $('#sign-out').removeClass('hide')
+  $('#new-game').removeClass('hide')
   console.log('signInSuccess data is: ', data)
   store.user = data.user
 }
@@ -46,6 +51,12 @@ const signOutSuccess = function (data) {
   $('#message').text('Signed out successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#board').addClass('hide')
+  $('#new-game').addClass('hide')
+  $('#sign-out').addClass('hide')
+  $('#change-password').addClass('hide')
+  $('#sign-in').removeClass('hide')
+  $('#sign-up').removeClass('hide')
   console.log('signOutSuccess data is: ', data)
 }
 const signOutFailure = function (error) {
@@ -55,6 +66,14 @@ const signOutFailure = function (error) {
   console.log('signOutFailure error is: ', error)
 }
 
+const restart = $('#start-game').click(function () {
+  $('.box').empty()
+  $('.X').removeClass('X')
+  $('.O').removeClass('O')
+  $('.board').removeClass('hide')
+  // turn = 'X'
+})
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -63,5 +82,6 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  restart
 }

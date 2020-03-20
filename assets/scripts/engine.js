@@ -67,16 +67,16 @@ const klik = $('.box').click(function () {
   $('#turn').text(turn)
 })
 
-// for the restart game button
-const restart = $('#start-game').click(function () {
-  $('.box').empty()
-  $('.X').removeClass('X')
-  $('.O').removeClass('O')
-  $('board').removeClass('hide')
-  turn = 'X'
-})
+// for the restart game button//
+//   const restart = $('#start-game').click(function () {
+//  $('.box').empty()
+//  $('.X').removeClass('X')
+//  $('.O').removeClass('O')
+//  $('board').removeClass('hide')
+//  turn = 'X'
+// })
 
 module.export = {
-  klik,
-  restart
+  klik
+    // restart
 }
