@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+       <h1>TIC TAC TOE</h1>
+      <div class="" id="header">
+
+
+
+            <h4 class="hide">Turn: Score <span id="turn">X</span></h4>
+            <form >
+                <p id="winer"></p>
+            </form>
+
+
+
+          </div>
+
+         <div id="board" class="board hide"  >
+           <div class="row row-1">
+             <div class="box col-1" id="1"></div>
+             <div class="box col-2" id="2"></div>
+             <div class="box col-3" id="3"></div>
+           </div>
+
+           <div class="row row-2">
+             <div class="box col-1" id="4"></div>
+             <div class="box col-2" id="5" ></div>
+             <div class="box col-3" id="6" ></div>
+           </div>
+
+           <div class="row row-3">
+             <div class="box col-1" id="7"></div>
+             <div class="box col-2" id="8"></div>
+             <div class="box col-3" id="9"></div>
+           </div>
+        </div>
+
+
+
+
+
+        <p id="message"></p>
+        <form id="sign-up" class="border">
+         <fieldset>
+           <legend>Sign up!</legend>
+           <input type="text" name="credentials[email]" placeholder="Email">
+           <input type="password" name="credentials[password]" placeholder="Password">
+           <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+           <input type="submit" value="Sign up!">
+         </fieldset>
+       </form>
+       <form id="sign-in" class="border">
+          <fieldset>
+            <legend>Sign in!</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" value="Sign in!">
+          </fieldset>
+        </form>
+
+        <fieldset id="new-game" class="hide">
+        <legend>Start a New Game And Get Game Stats</legend>
+         <input id="start-game" type="submit" value="New Game">
+         <input id="game-stats" type="submit" value="Get Stats">
+         <input id="get-games" type="submit" value="Get Games">
+        </fieldset>
+
+
+
+        <form id="change-password" class="border hide">
+        <fieldset>
+          <legend>Change Password!</legend>
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+          <input type="submit" value="Change Password!">
+        </fieldset>
+      </form>
+
+
+        <form id="sign-out" class="border hide">
+          <input type="submit" value="Sign Out">
+        </form>
+      </body>
+  </html>
