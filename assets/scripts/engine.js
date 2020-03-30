@@ -5,7 +5,7 @@ let turn = 'X'
 
 function checkForWin (val) {
   // for the rows
-  if ($('.row-1 .box.' + val).length === 3 ||
+  if ($('.row-1 .box.' + val).length === 3 ||  //'3'
     $('.row-2 .box.' + val).length === 3 ||
     $('.row-3 .box.' + val).length === 3 ||
     // for the cols
@@ -29,6 +29,7 @@ function checkForWin (val) {
   // I should not remove
     // make winning side
     $('.box').text(val)
+    $('#winer').text(val +  " "  +  'won the game')
     //   $('.X').removeClass('X');
     //  $('.O').removeClass('O')
 
@@ -76,7 +77,6 @@ const klik = $('.box').click(function () {
 //  turn = 'X'
 // })
 
-module.export = {
+module.exports = {
   klik
-    // restart
 }
