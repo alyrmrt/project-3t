@@ -64,7 +64,7 @@ const gameStats = function () {
   })
 }
 
-/* const getGames = function (data) {
+ const getGames = function (data) {
   if (data === undefined) {
     return $.ajax({
       url: config.apiUrl + '/games',
@@ -72,9 +72,9 @@ const gameStats = function () {
       headers: {
         Authorization: 'Token token=' + store.user.token
       }
-    }) // return
+    })
   }
-  // return games that are over
+
   return $.ajax({
     url: config.apiUrl + '/games[?over=]',
     method: 'GET',
@@ -82,7 +82,27 @@ const gameStats = function () {
       Authorization: 'Token token=' + store.user.token
     }
   })
-} */
+}
+
+
+const gameUpdate = function (div, word, check) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data : {
+      "game": {
+        "cell": {
+          "index": div.id,
+          "value": word
+    },
+    "over": !check
+  }
+}
+  })
+}
 
 module.exports = {
   signUp,
@@ -90,8 +110,10 @@ module.exports = {
   changePassword,
   signOut,
   gameStats,
-  newGame
-//  getGames
+  newGame,
+  getGames,
+  gameUpdate
+//  showGame
 }
 
 /* const config = require('../config')

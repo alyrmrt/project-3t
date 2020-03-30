@@ -81,6 +81,7 @@ const restart = $('#start-game').click(function () {
 //  $('#winer').remove('hide')
   $('#turn').remove('hide')
   // turn = 'X'
+ $('#message').text('')
 })
 
  const onGetGamesSuccess = function (data) {
@@ -109,6 +110,18 @@ const newGameFailure = function () {
   $('#message').text('Please try again.')
 }
 
+const onGameUpdateSuccessfull = function (data) {
+  store.game = data.game
+}
+
+const onGameUpdateFailure = function () {
+  $('#message').text('Error on updating the game! Please try again.')
+}
+
+
+
+
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -123,5 +136,7 @@ module.exports = {
   statsFailure,
   newGameSuccessfull,
   newGameFailure,
-  onGetGamesSuccess
+  onGetGamesSuccess,
+  onGameUpdateSuccessfull,
+  onGameUpdateFailure
 }

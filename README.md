@@ -20,6 +20,7 @@ Wireframe and User Stories:
 - Be able to  change password
 - Be able to sign out
 
-Planning Updates
- I am planing to add AI option to my game. This feature will provide playing
- against computer to user
+Planning Updates:
+
+I am planing to add AI option to my game. This feature will provide user to
+ playing against computer in diffrent level.

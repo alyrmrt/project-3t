@@ -3,6 +3,7 @@ const getFormFields = require('../../../lib/get-Form-Fields')
 const api = require('./api')
 const ui = require('./ui')
 
+
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -44,18 +45,28 @@ const onStats = function (event) {
     .catch(ui.statsFailure)
 }
 
+const onGetGames = function (event) {
+  event.preventDefault()
+  api.getGames()
+    .then(ui.onGetGamesSuccess)
+    .catch(ui.onGetGamesFailure)
+}
+
 const onNewGame = function (event) {
   event.preventDefault()
   api.newGame()
     .then(ui.newGameSuccessfull)
     .catch(ui.newGameFailure)
 }
-/* const onGetGames = function (event) {
+
+/* const onShowGame = function (event) {
   event.preventDefault()
-  api.getGames()
-    .then(ui.onGetGamesSuccess)
-    .catch(ui.onGetGamesFailure)
+  const gameId = event.target.id
+  api.showGame(gameId)
+    .then(ui.showGameSuccesfull)
+    .catch(ui.showGameFailure)
 } */
+
 
 module.exports = {
   onSignUp,
@@ -63,8 +74,9 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onStats,
-  onNewGame
-//  onGetGames
+  onNewGame,
+  onGetGames
+  // onShowGame
 }
 
 
